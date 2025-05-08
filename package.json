@@ -1,5 +1,5 @@
 {
-  "name": "pdftocsv",
+  "name": "pdftoxlsx",
   "version": "1.0.1",
   "description": "Read a specific bussiness PDF with OCR and return a XLSX with the data formatted",
   "main": "dist/index.js",

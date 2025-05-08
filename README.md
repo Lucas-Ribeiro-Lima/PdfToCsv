@@ -1,6 +1,6 @@
-# PdfToCsv - Produção Quilométrica para XLSX
+# PdfToXlsx - Produção Quilométrica para XLSX
 
-**PdfToCsv** é uma aplicação desktop com interface de terminal (clicável) que automatiza a extração e conversão de relatórios de produção quilométrica em PDF para planilhas `.xlsx`. Desenvolvido para atender um caso específico de negócio, o aplicativo valida a estrutura de diretórios, lê os arquivos PDF referentes aos decêndios e gera automaticamente uma planilha estruturada com os dados consolidados.
+**PdfToXlsx** é uma aplicação desktop com interface de terminal (clicável) que automatiza a extração e conversão de relatórios de produção quilométrica em PDF para planilhas `.xlsx`. Desenvolvido para atender um caso específico de negócio, o aplicativo valida a estrutura de diretórios, lê os arquivos PDF referentes aos decêndios e gera automaticamente uma planilha estruturada com os dados consolidados.
 
 ## 🎯 Objetivo
 
@@ -34,7 +34,7 @@ Caso a estrutura esteja incorreta, o programa exibirá uma mensagem de erro info
 
 ## ⚙️ Como Usar
 
-1. **Faça o download do executável** (`pdftocsv-win-x.y.z.exe`);
+1. **Faça o download do executável** (`pdftoXlsx-win-x.y.z.exe`);
 2. **Coloque o executável na pasta raiz** onde a estrutura de diretórios está organizada conforme mostrado acima;
 3. **Clique duas vezes no executável** para iniciar;
 4. **Selecione o decêndio** (1, 2 ou 3) para processar;
