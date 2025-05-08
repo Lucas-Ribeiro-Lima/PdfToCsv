@@ -1,0 +1,28 @@
+{
+  "name": "pdftocsv",
+  "version": "1.0.0",
+  "description": "Read a specific bussiness PDF with OCR and return a XLSX with the data formatted",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npx tsx --inspect src/index.ts",
+    "start": "node dist/index.js",
+    "build": "npx tsc && npx pkg --out-path bin --options regexp-optimization package.json"
+  },
+  "author": "lucaslive974",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.13",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "pdf2json": "^3.1.5",
+    "xlsx": "^0.18.5"
+  },
+  "bin": "dist/index.js",
+  "pkg": {
+    "assets": ".env",
+    "outputPath": "bin",
+    "targets": ["node14-win", "node14-linux", "node14-macos"]
+  }
+}
