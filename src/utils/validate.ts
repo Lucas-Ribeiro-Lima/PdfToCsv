@@ -1,8 +1,8 @@
 import { readdir } from "fs/promises"
 import { env } from "../conf/env"
-import { ConsoleLogger } from "../console"
-import { DecendioT, EnterpriseCodesT } from "../types"
+import { ConsoleLogger, endConsole } from "../console"
 import { DirectoryInvalidError } from "../errors"
+import { EnterpriseCodesT, MenuOptionsT } from "../types"
 
 const validEnterpriseCodes: Set<string> = new Set(["37", "107", "113", "123"])
 
@@ -15,11 +15,11 @@ export function validateEnterpriseCode(code: string | undefined | null): Enterpr
   return isEnterpriseCode(code) ? code : undefined
 }
 
-const validDecendios: Set<number> = new Set([0, 1, 2]) //Reduce one to match array indexes
+const validOptions: Set<number> = new Set([0, 1, 2, 3]) //Reduce one to match array indexes
 
-export function isValidDecendio(num: unknown): num is DecendioT {
+export function isValidOption(num: unknown): num is MenuOptionsT {
   if(typeof num !== "number") return false
-  return validDecendios.has(num)
+  return validOptions.has(num)
 }
 
 export async function verifyDirectory(): Promise<number> {
@@ -59,6 +59,7 @@ export async function verifyDirectory(): Promise<number> {
       └── ${YELLOW}app.exe${RESET}
     `
     ConsoleLogger.log(msg, "default")
+    endConsole()
     return 1
   }
 }

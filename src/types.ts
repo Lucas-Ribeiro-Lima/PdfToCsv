@@ -13,4 +13,6 @@ export type EnterpriseCodesT = "37" | "107" | "113" | "123"
 
 export type ParsedDataT = Record<string, string>
 
-export type DecendioT = 1 | 2 | 3
+export type MenuOptionsT = DecendioT | 3
+
+export type DecendioT = 0 | 1 | 2

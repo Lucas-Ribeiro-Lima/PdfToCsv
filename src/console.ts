@@ -1,7 +1,7 @@
 import { stdin, stdout } from 'process'
 import { createInterface, Interface } from 'readline'
-import { isValidDecendio } from './utils/validate'
-import { DecendioT } from './types'
+import { isValidOption } from './utils/validate'
+import { MenuOptionsT } from './types'
 
 type ConsoleLoggerColorT = "red" | "green" | "yellow" | "cyan" | "default"
 
@@ -24,23 +24,24 @@ export async function consoleMenu() {
   })
 
   try {
- 
     ConsoleLogger.log("──── Produção Quilometrica para Xlsx ────", "cyan")
     ConsoleLogger.log("────────── Selecione o Decêndio ─────────", "cyan")
     ConsoleLogger.log("Opções:", 'yellow')
     ConsoleLogger.log("1\x1b[0m - Primeiro Decêndio", 'green')
     ConsoleLogger.log("2\x1b[0m - Segundo Decêndio", 'green')
-    ConsoleLogger.log("3\x1b[0m - Terceiro Decêndio\n", "green")
+    ConsoleLogger.log("3\x1b[0m - Terceiro Decêndio", "green")
+    ConsoleLogger.log("4\x1b[0m - Sair\n", "cyan")
 
-    const option = Number(await question("Digite uma opção (1, 2, 3): ", rl)) - 1
+    const option = Number(await question("Digite uma opção (1, 2, 3, 4): ", rl)) - 1
 
-    if (!isValidDecendio(option)) throw new Error("INVALID_OPTION")
+    if (!isValidOption(option)) throw new Error("INVALID_OPTION")
       
-    ConsoleLogger.log(`\nVocê selecionou o decêndio: \x1b[0m${option + 1}\n`, "yellow")
-    return option as DecendioT
+    if(option !== 3) ConsoleLogger.log(`\nVocê selecionou o decêndio: \x1b[0m${option + 1}\n`, "yellow")
+      
+    return option as MenuOptionsT
   } catch (error) {
-    ConsoleLogger.log("Opção inválida! Por favor, escolha 1, 2 ou 3.", "red")
-    return 4
+    ConsoleLogger.log("Opção inválida! Por favor, escolha 1, 2, 3 ou 4", "red")
+    return 3
   } finally {
     rl.close()
   }
